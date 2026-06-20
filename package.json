@@ -1,0 +1,137 @@
+{
+  "name": "gorth-base-pipelines",
+  "version": "1.1.0",
+  "description": "",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./cores/body-parser": {
+      "types": "./dist/cores/body-parser.d.ts",
+      "import": "./dist/cores/body-parser.js",
+      "require": "./dist/cores/body-parser.cjs"
+    },
+    "./cores/cookie-parser": {
+      "types": "./dist/cores/cookie-parser.d.ts",
+      "import": "./dist/cores/cookie-parser.js",
+      "require": "./dist/cores/cookie-parser.cjs"
+    },
+    "./cores/cors": {
+      "types": "./dist/cores/cors.d.ts",
+      "import": "./dist/cores/cors.js",
+      "require": "./dist/cores/cors.cjs"
+    },
+    "./cores/helmet": {
+      "types": "./dist/cores/helmet.d.ts",
+      "import": "./dist/cores/helmet.js",
+      "require": "./dist/cores/helmet.cjs"
+    },
+    "./cores/morgan": {
+      "types": "./dist/cores/morgan.d.ts",
+      "import": "./dist/cores/morgan.js",
+      "require": "./dist/cores/morgan.cjs"
+    },
+    "./cores/multer": {
+      "types": "./dist/cores/multer.d.ts",
+      "import": "./dist/cores/multer.js",
+      "require": "./dist/cores/multer.cjs"
+    },
+    "./cores/nodemailer": {
+      "types": "./dist/cores/nodemailer.d.ts",
+      "import": "./dist/cores/nodemailer.js",
+      "require": "./dist/cores/nodemailer.cjs"
+    },
+    "./cores/otplib": {
+      "types": "./dist/cores/otplib.d.ts",
+      "import": "./dist/cores/otplib.js",
+      "require": "./dist/cores/otplib.cjs"
+    },
+    "./cores/qrcode": {
+      "types": "./dist/cores/qrcode.d.ts",
+      "import": "./dist/cores/qrcode.js",
+      "require": "./dist/cores/qrcode.cjs"
+    },
+    "./cores/picocolors": {
+      "types": "./dist/cores/picocolors.d.ts",
+      "import": "./dist/cores/picocolors.js",
+      "require": "./dist/cores/picocolors.cjs"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "cores/*": [
+        "dist/cores/*.d.ts"
+      ],
+      "common/*": [
+        "dist/common/*.d.ts"
+      ],
+      "*": [
+        "dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "tsup --minify",
+    "prepack": "pnpm build",
+    "dev": "tsup src/index.ts src/cores/*.ts src/lib/*.ts --format esm,cjs --dts --out-dir dist --watch",
+    "lint": "eslint",
+    "format": "prettier --write \"**/*.{ts,tsx}\"",
+    "typecheck": "tsc --noEmit",
+    "packprepare": "pnpm build",
+    "update": "pnpm update",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gorth",
+    "supabase"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.3.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "helmet": "^8.2.0",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.11.0",
+    "multer": "^2.2.0",
+    "nodemailer": "^9.0.1",
+    "otplib": "^13.4.1",
+    "picocolors": "^1.1.1",
+    "qrcode": "^1.5.4"
+  },
+  "peerDependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.5.1",
+    "express-session": "^1.19.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.4",
+    "@types/body-parser": "^1.19.6",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/express-session": "^1.19.0",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/morgan": "^1.9.10",
+    "@types/multer": "^2.1.0",
+    "@types/nodemailer": "^8.0.0",
+    "@types/pg": "^8.20.0",
+    "@types/qrcode": "^1.5.6",
+    "eslint": "^9.39.4",
+    "prettier": "^3.8.4",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "packageManager": "pnpm@10.34.3"
+}

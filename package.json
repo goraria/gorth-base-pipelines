@@ -11,55 +11,15 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./cores/body-parser": {
-      "types": "./dist/cores/body-parser.d.ts",
-      "import": "./dist/cores/body-parser.js",
-      "require": "./dist/cores/body-parser.cjs"
+    "./cores/*": {
+      "types": "./dist/cores/*.d.ts",
+      "import": "./dist/cores/*.js",
+      "require": "./dist/cores/*.cjs"
     },
-    "./cores/cookie-parser": {
-      "types": "./dist/cores/cookie-parser.d.ts",
-      "import": "./dist/cores/cookie-parser.js",
-      "require": "./dist/cores/cookie-parser.cjs"
-    },
-    "./cores/cors": {
-      "types": "./dist/cores/cors.d.ts",
-      "import": "./dist/cores/cors.js",
-      "require": "./dist/cores/cors.cjs"
-    },
-    "./cores/helmet": {
-      "types": "./dist/cores/helmet.d.ts",
-      "import": "./dist/cores/helmet.js",
-      "require": "./dist/cores/helmet.cjs"
-    },
-    "./cores/morgan": {
-      "types": "./dist/cores/morgan.d.ts",
-      "import": "./dist/cores/morgan.js",
-      "require": "./dist/cores/morgan.cjs"
-    },
-    "./cores/multer": {
-      "types": "./dist/cores/multer.d.ts",
-      "import": "./dist/cores/multer.js",
-      "require": "./dist/cores/multer.cjs"
-    },
-    "./cores/nodemailer": {
-      "types": "./dist/cores/nodemailer.d.ts",
-      "import": "./dist/cores/nodemailer.js",
-      "require": "./dist/cores/nodemailer.cjs"
-    },
-    "./cores/otplib": {
-      "types": "./dist/cores/otplib.d.ts",
-      "import": "./dist/cores/otplib.js",
-      "require": "./dist/cores/otplib.cjs"
-    },
-    "./cores/qrcode": {
-      "types": "./dist/cores/qrcode.d.ts",
-      "import": "./dist/cores/qrcode.js",
-      "require": "./dist/cores/qrcode.cjs"
-    },
-    "./cores/picocolors": {
-      "types": "./dist/cores/picocolors.d.ts",
-      "import": "./dist/cores/picocolors.js",
-      "require": "./dist/cores/picocolors.cjs"
+    "./lib/*": {
+      "types": "./dist/lib/*.d.ts",
+      "import": "./dist/lib/*.js",
+      "require": "./dist/lib/*.cjs"
     }
   },
   "typesVersions": {
@@ -67,8 +27,8 @@
       "cores/*": [
         "dist/cores/*.d.ts"
       ],
-      "common/*": [
-        "dist/common/*.d.ts"
+      "lib/*": [
+        "dist/lib/*.d.ts"
       ],
       "*": [
         "dist/index.d.ts"
@@ -116,7 +76,6 @@
     "express-session": "^1.19.0"
   },
   "devDependencies": {
-    "@types/node": "^25.9.4",
     "@types/body-parser": "^1.19.6",
     "@types/cookie-parser": "^1.4.10",
     "@types/cors": "^2.8.19",
@@ -125,6 +84,7 @@
     "@types/jsonwebtoken": "^9.0.10",
     "@types/morgan": "^1.9.10",
     "@types/multer": "^2.1.0",
+    "@types/node": "^25.9.4",
     "@types/nodemailer": "^8.0.0",
     "@types/pg": "^8.20.0",
     "@types/qrcode": "^1.5.6",

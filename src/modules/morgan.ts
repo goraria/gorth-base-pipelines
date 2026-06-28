@@ -2,15 +2,15 @@ import { Request, Response } from "express";
 import morgan from "morgan";
 import pc from "picocolors"
 
-export const morganMiddleware = (req: Request, res: Response) => {
-  morgan.token("response-time-ms", (req: Request, res: Response) => {
+export const morganMiddleware = (request: Request, response: Response) => {
+  morgan.token("response-time-ms", (req: Request = request, res: Response = response) => {
     const time = (morgan as any)["response-time"](req, res)
     if (!time) return "-"
 
     const num = parseFloat(time)
     return num >= 2000 ? `${(num / 1000).toFixed(1)}s` : `${Math.round(num)}ms`
   })
-  morgan.token("status-color", (req: Request, res: Response) => {
+  morgan.token("status-color", (req: Request = request, res: Response = response) => {
     const s = res.statusCode
     switch (true) {
       case s >= 500:

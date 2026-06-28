@@ -1,5 +1,13 @@
-import cookieParser from "cookie-parser";
+import type { RequestHandler } from "express";
+import cookieParser, { CookieParseOptions } from "cookie-parser";
 import session from "express-session";
+
+export const cookieParserConfig = (): RequestHandler => {
+  const cookieParserOptions: CookieParseOptions = {
+
+  };
+  return cookieParser();
+};
 
 // export const sessionConfig = (secret?: string, secure?: boolean) => {
 //   const sessionOptions = {

@@ -1,3 +1,2 @@
-import morgan from "morgan";
-
-export default morgan
+// export * from "morgan";
+export { default } from "morgan";

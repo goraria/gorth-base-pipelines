@@ -1,3 +1,2 @@
-import helmet from "helmet";
-
-export default helmet;
+export * from "helmet";
+export { default } from "helmet";

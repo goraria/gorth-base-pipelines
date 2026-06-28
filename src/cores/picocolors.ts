@@ -1,3 +1,2 @@
-import pc from "picocolors";
-
-export default pc
+// export * from "picocolors";
+export { default } from "picocolors";

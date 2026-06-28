@@ -1,3 +1,2 @@
-import multer from "multer";
-
-export default multer
+// export * from "multer";
+export { default } from "multer";
